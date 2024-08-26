@@ -1,3 +1,5 @@
+/* Existing Styles (unchanged) */
+
 /* General Reset */
 * {
     margin: 0;
@@ -40,16 +42,11 @@ span {
     color: dodgerblue;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    gap: 20px;
-}
-
 .navbar a {
     font-size: 18px;
     color: white;
     font-weight: 500;
+    margin: 0 20px;
     border-bottom: 3px solid transparent;
     transition: 0.3s ease;
 }
@@ -78,7 +75,6 @@ span {
     color: white;
 }
 
-/* Home Section */
 .home {
     width: 100%;
     min-height: 100vh;
@@ -113,8 +109,10 @@ span {
     gap: 2em;
 }
 
-.btn1, .btn2 {
+.btn1 {
     padding: 15px 28px;
+    background-color: black;
+    color: white;
     border: 2px solid transparent;
     border-radius: 8px;
     font-size: 18px;
@@ -124,11 +122,6 @@ span {
     cursor: pointer;
 }
 
-.btn1 {
-    background-color: black;
-    color: white;
-}
-
 .btn1:hover {
     background-color: white;
     color: black;
@@ -136,9 +129,16 @@ span {
 }
 
 .btn2 {
+    padding: 15px 28px;
     background-color: dodgerblue;
     color: white;
     border: 2px solid black;
+    border-radius: 8px;
+    font-size: 18px;
+    letter-spacing: 1;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .btn2:hover {
@@ -146,7 +146,24 @@ span {
     color: dodgerblue;
 }
 
-/* About Section */
+.img-box img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: dodgerblue;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 50px;
+}
+
 .about {
     display: flex;
     justify-content: center;
@@ -159,7 +176,8 @@ span {
 .about-img img {
     position: relative;
     object-fit: cover;
-    box-shadow: 0 0 25px dodgerblue, 0 0 25px dodgerblue;
+    box-shadow: 0 0 25px dodgerblue,
+                0 0 25px dodgerblue;
     border-radius: 50%;
 }
 
@@ -180,7 +198,6 @@ span {
     margin: 2em 0 3em;
 }
 
-/* Contact Form */
 .contact-form h2 {
     text-align: center;
     margin-top: 3em;
@@ -213,7 +230,6 @@ span {
     resize: none;
 }
 
-/* Footer */
 .footer {
     position: relative;
     bottom: 0;
@@ -280,72 +296,36 @@ span {
     color: white;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/* Media Queries */
 
-.active {
-    font-weight: bold;
-}
-
-section {
-    padding: 60px 20px;
-}
-
-.services, .experience, .projects, .education {
-    background-color: #f4f4f4;
-    margin-bottom: 20px;
-}
-
-.services h2, .experience h2, .projects h2, .education h2 {
-    margin-bottom: 20px;
-}
-
-.btn-box {
-    display: flex;
-    gap: 10px;
-}
-
-.btn1, .btn2 {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-}
-
-.btn2 {
-    background-color: #6c757d;
-}
-
-/* Mobile devices */
-@media only screen and (max-width: 600px) {
+/* Medium screens (Tablets) */
+@media (max-width: 900px) {
     .header {
-        padding: 20px 5%;
+        padding: 25px 8%;
         flex-direction: column;
         align-items: flex-start;
     }
 
     .navbar {
+        display: flex;
         flex-direction: column;
         gap: 10px;
+        align-items: flex-start;
     }
 
     .navbar a {
         font-size: 16px;
-        margin: 0;
+        margin: 10px 0;
     }
 
     .home {
+        padding: 20px 8%;
         flex-direction: column;
-        align-items: center;
-        padding: 20px 5%;
+        gap: 3em;
     }
 
     .home-content h3 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .home-content h1 {
@@ -357,75 +337,15 @@ section {
     }
 
     .btn-box {
+        width: 100%;
         flex-direction: column;
         gap: 1em;
-        width: 100%;
     }
 
     .about {
         flex-direction: column;
-        padding: 20px 5%;
-    }
-
-    .about-content h2 {
-        font-size: 28px;
-    }
-
-    .about-content h3 {
-        font-size: 34px;
-    }
-
-    .about-content p {
-        font-size: 16px;
-    }
-
-    .contact-form form .input-box {
-        flex-direction: column;
-    }
-
-    .footer ul li {
-        display: block;
-        padding: 5px 0;
-    }
-}
-
-/* Tablets */
-@media only screen and (min-width: 601px) and (max-width: 900px) {
-    .header {
-        padding: 25px 8%;
-    }
-
-    .navbar a {
-        font-size: 18px;
-        margin: 0 15px;
-    }
-
-    .home {
-        flex-direction: row;
-        padding: 25px 8%;
-        gap: 5em;
-    }
-
-    .home-content h3 {
-        font-size: 32px;
-    }
-
-    .home-content h1 {
-        font-size: 26px;
-    }
-
-    .home-content p {
-        font-size: 18px;
-    }
-
-    .btn-box {
-        flex-direction: row;
-        width: 100%;
-    }
-
-    .about {
-        padding: 10% 8%;
-        gap: 5em;
+        padding: 20px 8%;
+        gap: 3em;
     }
 
     .about-content h2 {
@@ -440,40 +360,85 @@ section {
         font-size: 18px;
     }
 
-    .contact-form form .input-box {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .contact-form form {
+        max-width: 100%;
+        padding: 0 10px;
     }
 
     .footer ul li {
-        padding: 5px 10px;
+        display: block;
+        padding: 5px 0;
     }
 }
 
-/* Desktops */
-@media only screen and (min-width: 901px) {
+/* Small screens (Phones) */
+@media (max-width: 600px) {
     .header {
-        padding: 35px 12%;
+        padding: 20px 5%;
     }
 
     .navbar {
-        display: flex;
-        gap: 20px;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .navbar a {
-        font-size: 18px;
-        margin: 0 20px;
+        font-size: 14px;
+        margin: 5px 0;
     }
 
     .home {
-        flex-direction: row;
-        padding: 30px 12%;
-        gap: 7em;
+        padding: 15px 5%;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .home-content h3 {
+        font-size: 28px;
+    }
+
+    .home-content h1 {
+        font-size: 20px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .btn-box {
+        width: 100%;
+        flex-direction: column;
     }
 
     .about {
-        padding: 12% 8%;
-        gap: 10em;
+        flex-direction: column;
+        padding: 10px 5%;
+        gap: 2em;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+
+    .about-content h3 {
+        font-size: 34px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .contact-form form {
+        padding: 0;
+    }
+
+    .footer ul li {
+        display: block;
+        padding: 5px 0;
+    }
+
+    .footer .social a {
+        font-size: 20px;
     }
 }
